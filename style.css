@@ -247,20 +247,14 @@ video{
     font-size: 16px;
   }
 
-  select[type="CropName"] {
+  select{
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    color: #4984c4;
-    color: black;
-  }
-
-  select:hover {
-    color: #f1f1f1;
-    background-color: #4c86af;
-    color: black;
+    color: white;
+    background-color: #0d0d0d;
   }
 
 
@@ -271,7 +265,8 @@ video{
     border-radius: 5px;
     font-size: 16px;
     resize: vertical; 
-    color: black;
+    background-color: black;
+    color: white;
   }
   
 
