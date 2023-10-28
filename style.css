@@ -30,6 +30,10 @@ html,body {
     position: fixed;
     z-index:99; /* to bring navbar above everything below it (video,etc)*/
 }
+#nav a:hover {
+  color: yellow;
+}
+
 #nav img{
     height: 75px;
 }
