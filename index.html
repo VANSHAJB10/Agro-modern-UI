@@ -50,8 +50,10 @@
             
             <div id="c1">
             <label class="me" style="font-size: 16px;">Fill your crop details:</label><br />
-                <select name="CropName" required>
-                    <option value="" disabled selected>Select Crop</option>
+               <select name="CropName" required="" style="
+    background-color: black;
+">
+                    <option value="" disabled="" selected="">Select Crop</option>
                     <option value="Wheat">Wheat</option>
                     <option value="Rice">Rice</option>
                     <option value="Corn">Corn</option>
@@ -75,11 +77,15 @@
                 </select>
             </label>
         </div>
+            
         <label>
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
         </label>
         <label>
-            <textarea id="api-output" rows="10" cols="50" readonly></textarea>
+<textarea id="api-output" rows="10" cols="50" readonly="" style="
+    background-color: black;
+"></textarea>
+            
         </label>
         </form>
     </div>
