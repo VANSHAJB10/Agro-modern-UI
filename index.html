@@ -51,7 +51,7 @@
             <div id="c1">
             <label class="me" style="font-size: 16px;">Fill your crop details:</label><br />
                 <select name="CropName" required>
-                    <option value="" disabled selected>Select Crop</option>
+                    <option hidden selected>Select Crop</option>
                     <option value="Wheat">Wheat</option>
                     <option value="Rice">Rice</option>
                     <option value="Corn">Corn</option>
@@ -78,9 +78,7 @@
         <label>
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
         </label>
-        <label>
             <textarea id="api-output" rows="10" cols="50" readonly></textarea>
-        </label>
         </form>
     </div>
             <div id="green-div">
