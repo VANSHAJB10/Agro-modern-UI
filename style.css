@@ -1,294 +1,299 @@
-*{                          /*universal selector*/
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:monospace;
-    color: white; /*text of whole website will be white*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+  color: white;
 }
-html,body {
-    height: 100%;
-    width: 100%;
+
+html, body {
+  height: 100%;
+  width: 100%;
 }
+
 #nav > a:hover > h3 {
   color: yellow;
 }
 
 #cursor {
-    height: 25px;
-    width: 25px;
-    background-color: #95C11E;
-    border-radius: 50%;
-    position:fixed;
-    z-index:99;
-}
-#nav{
-    height: 145px;
-    width:100%;
-    /* background-color:red; */
-    display: flex;   /*elements ek line mei aa jaenge*/
-    align-items: center;   /*adjusting elements in y-axis*/
-    justify-content: flex-start; /*adjusting in x-axis;  can't make it center as we don't need the logo to come in center with the menu items*/
-    gap: 50px; /*space between menu items of navbar*/
-    padding: 0 150px;  /* padding of full flexbox of navbar -- top,bottom =0 ; left,right =150px*/
-    position: fixed;
-    z-index:99; /* to bring navbar above everything below it (video,etc)*/
-}
-#nav img{
-    height: 75px;
-}
-#nav h4{                        /*to set property to h4 of nav*/
-    text-transform:uppercase;
-    font-weight: 500;
+  height: 25px;
+  width: 25px;
+  background-color: #95C11E;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
 }
 
-
-video{
-    height:100%;
-    width: 100%;
-    object-fit: cover;
-    position: fixed; /*video is fixed*/
-    z-index:-1;
+#nav {
+  height: 145px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+  padding: 0 150px;
+  position: fixed;
+  z-index: 99;
 }
 
-
-#main{
-    /*its just a wrapper div so no styling */
-    position:relative;                                 /*?????????*/   /*so that it scrolls*/
-    background-color: rgba(0,0,0,0.38);
+#nav img {
+  height: 75px;
 }
 
-#page1{
-    /* height: 100%;  */ 
-    /* don't keep the width and height of child 'page1' in % as the 'main' which is a parent here of page1 has no styling,height,width. The parent has 0 height so its child have 100% of 0 = 0 height. SO, KEEP IT IN vh */
-    height: 100vh; 
-    width:100%;
-    /* background-color: red; */
-    position:relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-direction: column;  /* to bring the flex into column wise instead of row wise*/
-
-    text-align: center;
-}
-#page1 h1{
-    font-size: 120px;
-    font-weight: 900;
-    position: relative;
-}
-/*pseudo elemets are used to write something with help of css*/
-#page1 h1::before{
-    content: "THANKS FOR SAVING RESOURCES.";
-    position : absolute;
-    color: #000;
-    top: -6px;
-    left: -6px;
-    -webkit-text-stroke:1px #95C11E;   /*width color*/
-    z-index: -1;
+#nav h4 {
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
-#page1 h2{
-    font-size: 30px;
-    font-weight: 800;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-#page1 p{
-    font-size: 18px;
-    font-weight: 500px;
-    width: 40%;
+video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
 }
 
+#main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+#page1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#page1 h1 {
+  font-size: 5vw;
+  font-weight: 900;
+  position: relative;
+}
+
+#page1 h1::before {
+  content: "THANKS FOR SAVING RESOURCES.";
+  position: absolute;
+  color: #000;
+  top: -6px;
+  left: -6px;
+  -webkit-text-stroke: 1px #95C11E;
+  z-index: -1;
+}
+
+#page1 h2 {
+  font-size: 2vw;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#page1 p {
+  font-size: 1.5vw;
+  font-weight: 500;
+  width: 60%;
+}
 
 #page2 {
-    min-height: 100vh;
-    width: 100%;
-    z-index: 10;
-  }
-  
-#scroller {
-    /* background-color: red; */
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    position: relative;
-    z-index: 10;
-    padding-bottom: 80px;
-  }
-#scroller::-webkit-scrollbar {
-    display: none;
-  }
-#scroller-in {
-    display: inline-block;
-    white-space: nowrap;
-    animation-name: scroll;
-    animation-duration: 40s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-  
-#scroller h4 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
 
-    display: inline-block;
-    font-size: 120px;
-    font-weight: 900;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-right: 20px;
-    transition: all linear 0.3s;
-    color: #000;
-    -webkit-text-stroke: 2px #ffffff;
-  }
+#scroller {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 80px;
+}
+
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+
+#scroller-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+  display: inline-block;
+  font-size: 6vw;
+  font-weight: 900;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-right: 20px;
+  transition: all linear 0.3s;
+  color: #000;
+  -webkit-text-stroke: 2px #ffffff;
+}
+
 #scroller h4:hover {
-    color: #95c11e;
-    -webkit-text-stroke: 2px #95c11e;
+  color: #95c11e;
+  -webkit-text-stroke: 2px #95c11e;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
   }
-  
-  @keyframes scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
+  to {
+    transform: translateX(-100%);
   }
-  
+}
 
 #green-div {
-    height: 30vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* background-color: red; */
-    background: linear-gradient(to left bottom, #119f3a, #ace022);
-  }
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to left bottom, #119f3a, #ace022);
+}
+
 #green-div h4 {
-    width: 45%;
-    line-height: 50px;
-    color: #000;
-    text-align: center;
-    font-weight: 800;
-    font-size: 27px;
-    text-transform: uppercase;
-  }
+  width: 45%;
+  line-height: 50px;
+  color: #000;
+  text-align: center;
+  font-weight: 800;
+  font-size: 2vw;
+  text-transform: uppercase;
+}
+
 #green-div img {
-    height: 100%;
-    object-fit: cover;
-    width: 14%;
-  }
-
-
-
-
-
-
-
-
+  height: 100%;
+  object-fit: cover;
+  width: 14%;
+}
 .container {
-    max-width: 60%;
-    margin: 0 auto;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(189, 187, 187);
+  border-radius: 5px;
+}
+
+#contact {
+  text-align: center;
+}
+
+#contact h3 {
+  font-size: 2vw;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 20px;
+}
+
+select {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.5vw;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.5vw;
+}
+
+textarea {
+  width: 100%;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1.5vw;
+  resize: vertical;
+  color: black;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5vw;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+@media only screen and (max-width: 768px) {
+  #nav {
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  #nav img {
+    height: 50px;
+  }
+
+  #nav h4 {
+    font-size: 3vw;
+  }
+
+  #page1 h1 {
+    font-size: 10vw;
+  }
+
+  #page1 h2 {
+    font-size: 5vw;
+  }
+
+  #page1 p {
+    font-size: 4vw;
+    width: 80%;
+  }
+
+  #scroller h4 {
+    font-size: 10vw;
+  }
+
+  #green-div h4 {
+    font-size: 5vw;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #nav {
+    flex-direction: column;
+    height: auto;
     padding: 20px;
-    background-color: rgb(189, 187, 187);
-    border-radius: 5px;
-  }
-  
-  /* Styles for the form */
-  #contact {
-    text-align: center;
-  }
-  
-  /* Styles for the form header */
-  #contact h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  /* Styles for form fields */
-  label {
-    margin-bottom: 20px;
-  }
-  
-  /* Styles for the select input */
-  select {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    gap: 10px;
   }
 
-  #c1{
-    display: inline;
+  #nav img {
+    height: 40px;
   }
 
-  #c2{
-    display: inline;
-    border-width: 200px;
-  }
-  
-  /* Styles for the number input */
-  input[type="number"] {
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    padding: 10px;
-    background-color: #000;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    border-width: 50%;
-    font-size: 16px;
+  #page1 {
+    padding: 20px;
   }
 
-  input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+  #page1 h1 {
+    font-size: 8vw;
   }
-
-  select[type="CropName"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #4984c4;
-    color: black;
-  }
-
-  select:hover {
-    color: #f1f1f1;
-    background-color: #4c86af;
-    color: black;
-  }
-
-
-  textarea {
-    width: 100%;
-    padding: 60px;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-size: 16px;
-    resize: vertical; 
-    color: black;
-  }
-  
-
-  button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
+}
